@@ -1,4 +1,5 @@
 jquery
 ======
 
-jquery+google cood prettify
+menu : jquery
+editor : ace(google prettyfy)
