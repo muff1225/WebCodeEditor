@@ -6,58 +6,53 @@
   <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
        Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="user-scalable=no">
 
   <title>index</title>
   <meta name="description" content="" />
   <meta name="author" content="graphil" />
 
-  <meta name="viewport" content="width=device-width; initial-scale=1.0" />
-
   <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-
-	<link href="lib/google-code-prettify/prettify.css" type="text/css" rel="stylesheet">
-	<link href="lib/jquerymobile-1.3.0/jquery.mobile-1.3.0.min.css" type="text/css"  rel="stylesheet"/>
-	<script type="text/javascript" src="lib/google-code-prettify/prettify.js"></script>
+	<link href="lib/jquerymobile-1.3.0/jquery.mobile-1.3.0.min.css" type="text/css" rel="stylesheet"/>
+	<link href="lib/sidr-package-1.1.1/stylesheets/jquery.sidr.dark.css" type="text/css" rel="stylesheet"/>
+	<link href="css/index.css" type="text/css" rel="stylesheet"/>
+	<script type="text/javascript" src="lib/ace-master/build/src/ace.js"></script>
 	<script type="text/javascript"  src="lib/jquery-1.9.1/jquery-1.9.1.js"></script>
 	<script type="text/javascript"  src="lib/jquerymobile-1.3.0/jquery.mobile-1.3.0.min.js"></script>
-	<script type="text/javascript"  src="js/editor_event.js"></script>
-	<script type="text/javascript">
-	// <![CDATA[
-	(function(){
-	    function init(event){
-	        prettyPrint();
-	    }
-	    if(window.addEventListener)window.addEventListener("load",init,false);
-	    else if(window.attachEvent)window.attachEvent("onload",init);
-	})();
-	// ]]>
-	</script>
+	<script type="text/javascript" src="lib/sidr-package-1.1.1/jquery.sidr.min.js"></script>
+	<script type="text/javascript" src="js/properties.js"></script>
+	<script type="text/javascript" src="js/commonFunction.js"></script>
+	<script type="text/javascript" src="js/jquery.toastmessage.js"></script>
+	<script type="text/javascript" src="js/initialize.js"></script>
+	<script type="text/javascript" src="js/action.js"></script>
+	<script type="text/javascript" src="js/eventHandler.js"></script>
 
-<div data-role="header">
-    <a href="#" data-icon="bars">Menu</a>
-    <h1>Shumaho</h1>
-    <a href="#" data-icon="gear">Settings</a>
-</div>
 </head>
 
-<body>
-<pre id="cooleditor" class="prettyprint linenums">
-public static void main(String[] args){
-	public String name = "スプリング";
-}
-</pre>
+<script>
+$(document).ready(function() {
+	$('#menu').sidr();
+});
+</script>
+
+<div data-role="header">
+    <a id="menu" href="#sidr" data-icon="bars">Menu</a>
+    <h2>Shumaho</h2>
+    <a href="#" data-icon="gear">Settings</a>
+</div>
+
+<div id="sidr">
+	<ul>
+		<li><a href="javascript:setTextValue()">パッケージ一覧</a></li>
+		<li><a id="testFile" href="javascript:getOneFile()">test.java</a></li>
+	</ul>
+</div>
+
+<body onload="initialize()">
+<div id="coolIDE" style="height: 300px; width: 100%">文字を挿入してください</div>
 </body>
 
 <script>
-	$(document).ready(function(){
-		$("#cooleditor li").hide();
-		$("span").click(function () {
-			$(this).hide();
-			//var index = $("#cooleditor span").index(this);
-			//$("#cooleditor span:(" + index ")").hide();
-			//$("#cooleditor span").text(index + 1);
-		});
-	});
+eventAttach();
 </script>
 </html>
