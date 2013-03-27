@@ -1,6 +1,6 @@
 var editorName = "coolIDE";
 var coolIDEObj = null;
-var webServerName = "ws://192.168.1.27:3120";
+var webServerName = "ws://localhost:3120";
 var ws = null;
 var getPackageEvent = "getall";
 var getFileEvent = "getfile";

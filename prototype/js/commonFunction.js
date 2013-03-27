@@ -1,6 +1,5 @@
 function getConnection() {
     ws = new WebSocket(webServerName);
-    ws = null;
     ws.onmessage = function(evt) {
         $("#msg").append("<p>"+evt.data+"</p>");
         console.log("message arrivaled");
